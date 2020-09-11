@@ -1,5 +1,10 @@
 ### Hi there 👋
 
+I enjoy being challenged and engaging with projects that require me to work outside my comfort and knowledge set, as continuing to learn new languages and development techniques are important to me.
+
+
+🌱 I’m currently learning Blazor
+
 <!--
 **umairsyed613/umairsyed613** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
