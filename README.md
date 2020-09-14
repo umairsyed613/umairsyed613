@@ -1,9 +1,12 @@
-### Hi there 👋
+### Hi I'm Umair Syed 👋
 
-I enjoy being challenged and engaging with projects that require me to work outside my comfort and knowledge set, as continuing to learn new languages and development techniques are important to me.
+I'm a Microsoft Stack developer, I enjoy being challenged and engaging with projects that require me to work outside my comfort and knowledge set, as continuing to learn new languages and development techniques are important to me.
 
 
 🌱 I’m currently learning Blazor
+
+## 📫 Contact Me
+- LinkedIn - [Umair Syed](https://www.linkedin.com/in/umairsyed613/)
 
 <!--
 **umairsyed613/umairsyed613** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
