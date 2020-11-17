@@ -10,6 +10,15 @@ I'm a Microsoft Stack developer, I enjoy being challenged and engaging with proj
 ## 📫 Contact Me
 - LinkedIn - [Umair Syed](https://www.linkedin.com/in/umairsyed613/)
 
+<div style="clear: both;">
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+  <img align="left" src="https://github-readme-stats.vercel.app/api?username=umairsyed613&count_private=true&show_icons=true" />
+</a>
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=umairsyed613" />
+</a>
+</div>
+
 <!--
 **umairsyed613/umairsyed613** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
