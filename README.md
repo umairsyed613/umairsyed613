@@ -19,10 +19,10 @@ I'm a Microsoft Stack developer, I enjoy being challenged and engaging with proj
 
 <div style="clear: both;">
   <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="left" src="https://github-readme-stats.vercel.app/api?username=umairsyed613&count_private=true&show_icons=true" />
+  <img align="left" src="https://github-readme-stats.vercel.app/api?username=umairsyed613&count_private=true&show_icons=true&theme=dark" />
 </a>
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=umairsyed613" />
+  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=umairsyed613&theme=dark" />
 </a>
 </div>
 
