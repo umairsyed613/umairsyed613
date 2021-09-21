@@ -3,7 +3,7 @@
 I'm a Microsoft Stack developer, I enjoy being challenged and engaging with projects that require me to work outside my comfort and knowledge set.
 
 
-🌱 I’m currently learning Blazor
+🌱 I’m currently learning Blazor and Ionic with Angular
 
 👯 Check out my latest work with blazor
 
@@ -13,6 +13,11 @@ I'm a Microsoft Stack developer, I enjoy being challenged and engaging with proj
 |2|[BlazorMealPlanner](https://github.com/umairsyed613/UNMealPlanner)|![last commit](https://img.shields.io/github/last-commit/umairsyed613/UNMealPlanner?style=flat-square&cacheSeconds=86400)|
 |3|[DigitalTallyCounter](https://github.com/umairsyed613/DigitalTallyCounter)|![last commit](https://img.shields.io/github/last-commit/umairsyed613/DigitalTallyCounter?style=flat-square&cacheSeconds=86400)|
 |4|[PigeonsTracker](https://github.com/umairsyed613/PigeonsTracker)|![last commit](https://img.shields.io/github/last-commit/umairsyed613/PigeonsTracker?style=flat-square&cacheSeconds=86400)|
+
+Ionic
+| Nr | ProjectName  ||
+| -- | ------------ |---------|
+|1|[Apna-Bawarchi-Khana](https://github.com/umairsyed613/MealPlanner)|![last commit](https://img.shields.io/github/last-commit/umairsyed613/MealPlanner?style=flat-square&cacheSeconds=86400)|
 
 
 ## 📫 Contact Me
