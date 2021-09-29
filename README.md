@@ -17,7 +17,7 @@ I'm a Microsoft Stack developer, I enjoy being challenged and engaging with proj
 Ionic
 | Nr | ProjectName  ||
 | -- | ------------ |---------|
-|1|[Apna-Bawarchi-Khana](https://github.com/umairsyed613/MealPlanner)|![last commit](https://img.shields.io/github/last-commit/umairsyed613/MealPlanner?style=flat-square&cacheSeconds=86400)|
+|1|[PlannerZz](https://github.com/umairsyed613/Plannerzz)|![last commit](https://img.shields.io/github/last-commit/umairsyed613/Plannerzz?style=flat-square&cacheSeconds=86400)|
 
 
 ## 📫 Contact Me
