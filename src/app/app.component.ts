@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 
 const ThemeKey = 'color-theme';
@@ -21,21 +20,5 @@ export class AppComponent {
     } else {
       document.documentElement.classList.remove('dark')
     }
-  }
-
-  toggleTheme() {
-    const themeValue = localStorage.getItem(ThemeKey);
-
-    console.log(themeValue);
-
-    if (themeValue === null || themeValue === 'light') {
-      localStorage.setItem(ThemeKey, 'dark');
-    }
-    else {
-      localStorage.setItem(ThemeKey, 'light');
-    }
-
-    this.checkAndApplyDarkMode();
-
   }
 }
