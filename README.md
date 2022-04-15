@@ -23,6 +23,9 @@ Ionic
 ## 📫 Contact Me
 - LinkedIn - [Umair Syed](https://www.linkedin.com/in/umairsyed613/)
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/umairsyed613)
+
+
 <div style="clear: both;">
   <a href="https://github.com/anuraghazra/github-readme-stats">
   <img align="left" src="https://github-readme-stats.vercel.app/api?username=umairsyed613&count_private=true&show_icons=true&theme=dark" />
