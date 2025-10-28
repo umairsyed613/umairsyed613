@@ -274,6 +274,60 @@ section {
   border-radius: 50%;
   border: 4px solid var(--border-color);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+.rotating-text-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: rotate 20s linear infinite;
+}
+
+.rotating-text-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-circular-text {
+  fill: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#floating-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.rotating-circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 30s linear infinite;
+  opacity: 0.3;
+}
+
+.circular-text {
+  fill: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .rotating-text {
