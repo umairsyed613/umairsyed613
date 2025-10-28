@@ -61,6 +61,14 @@ p { color: var(--text-secondary); }
   background-clip: text;
 }
 
+.text-gradient-tech {
+  background: linear-gradient(90deg, #9333EA, #06B6D4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+}
+
 .text-primary {
   color: var(--primary-color) !important;
 }
@@ -1159,4 +1167,24 @@ section {
 
 .loading {
   animation: pulse 2s ease infinite;
+}
+
+/* ================================================
+   Custom Cursor
+   ================================================ */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.25s, transform 0.2s ease;
+  opacity: 0;
+}
+
+.custom-cursor.hover {
+  transform: scale(1.5);
+  border-color: var(--primary-color);
 }

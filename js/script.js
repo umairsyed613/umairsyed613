@@ -265,4 +265,47 @@
     $('body').addClass('loaded');
   });
 
+  // ========================================
+  // Custom Cursor
+  // ========================================
+  
+  const cursor = document.getElementById('cursor');
+  let mouseX = 0;
+  let mouseY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
+  
+  // Show cursor on mouse move
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.opacity = '1';
+  });
+  
+  // Hide cursor when leaving window
+  document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+  });
+  
+  // Smooth cursor follow
+  function animateCursor() {
+    const speed = 0.15;
+    cursorX += (mouseX - cursorX) * speed;
+    cursorY += (mouseY - cursorY) * speed;
+    cursor.style.transform = `translate3d(${cursorX - 10}px, ${cursorY - 10}px, 0)`;
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+  
+  // Hover effect on interactive elements
+  const interactiveElements = document.querySelectorAll('a, button, .btn, [role="button"]');
+  interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.classList.add('hover');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('hover');
+    });
+  });
+
 })(jQuery);
