@@ -1,198 +1,268 @@
-/*----------------------------------------------------------------
+/**
+ * Modern Portfolio - JavaScript
+ */
 
-	Template Name: Ethant Hunt - HTML Template 
-	Version: 1.0
+(function($) {
+  'use strict';
 
-	-------------------------------------------------------------------------------*/
+  // ========================================
+  // Navigation
+  // ========================================
+  
+  // Smooth scrolling for navigation links
+  $('.nav-link, a[href^="#"]').on('click', function(e) {
+    var target = $(this.getAttribute('href'));
+    if(target.length) {
+      e.preventDefault();
+      $('html, body').stop().animate({
+        scrollTop: target.offset().top - 70
+      }, 1000);
+      
+      // Close mobile menu after click
+      $('.navbar-collapse').collapse('hide');
+    }
+  });
 
-/**************************************************************
-	
-	Main Js Activation
-	01. Preloader 
-	02. Menu 
-	03. Pagepiling
-	04. Typed Text
-	05. Parallax
-	06. Carousels
-	07. Ajax Forms
-	__ End Js Activation
+  // Navbar scroll effect
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 50) {
+      $('#mainNav').addClass('scrolled');
+    } else {
+      $('#mainNav').removeClass('scrolled');
+    }
+  });
 
-***************************************************************/
+  // Active nav link on scroll
+  $(window).on('scroll', function() {
+    var scrollPos = $(document).scrollTop() + 100;
+    
+    $('.nav-link').each(function() {
+      var currLink = $(this);
+      var refElement = $(currLink.attr('href'));
+      
+      if (refElement.length && refElement.position().top <= scrollPos && 
+          refElement.position().top + refElement.height() > scrollPos) {
+        $('.nav-link').removeClass('active');
+        currLink.addClass('active');
+      } else {
+        currLink.removeClass('active');
+      }
+    });
+  });
 
-(function ($) {
-	'use strict';
+  // ========================================
+  // Statistics Counter Animation
+  // ========================================
+  
+  function animateCounter($element, target) {
+    var current = 0;
+    var increment = target / 50;
+    var suffix = $element.text().includes('+') ? '+' : '%';
+    
+    var timer = setInterval(function() {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      $element.text(Math.floor(current) + suffix);
+    }, 30);
+  }
 
-	/*-------------------------------------------------------------------------------
-	  Preloader
-	-------------------------------------------------------------------------------*/
+  // Trigger counter animation when section is visible
+  var counterAnimated = false;
+  $(window).on('scroll', function() {
+    if (!counterAnimated && $('.stats-section').length) {
+      var statsTop = $('.stats-section').offset().top;
+      var statsBottom = statsTop + $('.stats-section').outerHeight();
+      var scrollPos = $(window).scrollTop() + $(window).height();
+      
+      if (scrollPos > statsTop && $(window).scrollTop() < statsBottom) {
+        counterAnimated = true;
+        $('.stat-number').each(function() {
+          var $this = $(this);
+          var count = parseInt($this.data('count'));
+          animateCounter($this, count);
+        });
+      }
+    }
+  });
 
-	$(window).on('load', function() {
-		if ( $('.preloader').length ) {
-			$('.preloader').fadeOut('slow');
-		}
+  // ========================================
+  // FAQ Accordion
+  // ========================================
+  
+  $('.faq-question').on('click', function() {
+    var $item = $(this).closest('.faq-item');
+    var isActive = $item.hasClass('active');
+    
+    // Close all FAQs
+    $('.faq-item').removeClass('active');
+    $('.faq-answer').slideUp(300);
+    
+    // Open clicked FAQ if it wasn't active
+    if (!isActive) {
+      $item.addClass('active');
+      $item.find('.faq-answer').slideDown(300);
+    }
+  });
 
-		if ( $('.a-intro').length ) {
-			$('.a-intro').addClass('active');
-		}
-	});
+  // ========================================
+  // Testimonials Carousel
+  // ========================================
+  
+  if ($('.testimonial-carousel').length) {
+    $('.testimonial-carousel').owlCarousel({
+      items: 1,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true,
+      nav: true,
+      dots: true,
+      navText: ['<span>‹</span>', '<span>›</span>'],
+      smartSpeed: 800,
+      responsive: {
+        0: {
+          nav: false
+        },
+        768: {
+          nav: true
+        }
+      }
+    });
+  }
 
+  // ========================================
+  // Skills Progress Bars Animation
+  // ========================================
+  
+  var skillsAnimated = false;
+  $(window).on('scroll', function() {
+    if (!skillsAnimated && $('.about-section').length) {
+      var aboutTop = $('.about-section').offset().top;
+      var scrollPos = $(window).scrollTop() + $(window).height();
+      
+      if (scrollPos > aboutTop + 200) {
+        skillsAnimated = true;
+        $('.progress-bar').each(function() {
+          var $bar = $(this);
+          var width = $bar.css('width');
+          $bar.css('width', '0');
+          setTimeout(function() {
+            $bar.css('width', width);
+          }, 100);
+        });
+      }
+    }
+  });
 
+  // ========================================
+  // Contact Form
+  // ========================================
+  
+  $('#contactForm').on('submit', function(e) {
+    e.preventDefault();
+    
+    var $form = $(this);
+    var $message = $('#formMessage');
+    var formData = {
+      name: $form.find('[name="name"]').val(),
+      email: $form.find('[name="email"]').val(),
+      message: $form.find('[name="message"]').val()
+    };
 
-	/*-------------------------------------------------------------------------------
-	  Menu
-	-------------------------------------------------------------------------------*/
+    // Simple validation
+    if (!formData.name || !formData.email || !formData.message) {
+      $message.removeClass('success').addClass('error')
+        .text('Please fill in all required fields.')
+        .show();
+      return;
+    }
 
-	$('.a-nav-toggle').on('click', function(){
-		if ($('html').hasClass('body-menu-opened')) {
-			$('html').removeClass('body-menu-opened').addClass('body-menu-close');
-		} else {
-			$('html').addClass('body-menu-opened').removeClass('body-menu-close');
-		}
-	});
+    // Email validation
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      $message.removeClass('success').addClass('error')
+        .text('Please enter a valid email address.')
+        .show();
+      return;
+    }
 
+    // Show loading state
+    var $submitBtn = $form.find('[type="submit"]');
+    var originalText = $submitBtn.text();
+    $submitBtn.prop('disabled', true).text('Sending...');
 
+    // Simulate form submission (replace with actual AJAX call to mail.php)
+    $.ajax({
+      url: 'mail.php',
+      method: 'POST',
+      data: formData,
+      success: function(response) {
+        $message.removeClass('error').addClass('success')
+          .text('Thank you! Your message has been sent successfully.')
+          .show();
+        $form[0].reset();
+      },
+      error: function() {
+        $message.removeClass('success').addClass('error')
+          .text('Sorry, something went wrong. Please try again.')
+          .show();
+      },
+      complete: function() {
+        $submitBtn.prop('disabled', false).text(originalText);
+        setTimeout(function() {
+          $message.fadeOut();
+        }, 5000);
+      }
+    });
+  });
 
-	/*-------------------------------------------------------------------------------
-	  Pagepiling
-	-------------------------------------------------------------------------------*/
+  // ========================================
+  // Scroll Animations
+  // ========================================
+  
+  function checkScroll() {
+    $('.animate-on-scroll').each(function() {
+      var $element = $(this);
+      var elementTop = $element.offset().top;
+      var elementBottom = elementTop + $element.outerHeight();
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+      
+      if (elementBottom > viewportTop && elementTop < viewportBottom) {
+        $element.addClass('animated');
+      }
+    });
+  }
 
-	if ( $('.a-pagepiling').length ) {
-		$('.a-pagepiling').pagepiling({
-			scrollingSpeed: 280,
-			menu: '#menu, #menuMain',
-			anchors: ['About', 'Skills', 'Portfolio', 'Contact'],
-			loopTop: false,
-			loopBottom: false,
-			navigation: {
-				'position': 'right'
-			},
-			onLeave: function(){
-				$('.a-progressbar .progress-bar').each(function() {
-					if ($('.slide-skills').hasClass('active')) {
-						$(this).width($(this).attr('aria-valuenow') + '%');
-					} else {
-						$(this).width('0');
-					}
-				});
+  $(window).on('scroll', checkScroll);
+  checkScroll(); // Check on load
 
-				typedText();
-			}
-		});
-	}
+  // ========================================
+  // Initialize on Document Ready
+  // ========================================
+  
+  $(document).ready(function() {
+    // Add animation classes to elements
+    $('.service-card, .project-card, .pricing-card, .work-item').addClass('animate-on-scroll');
+    
+    // Trigger initial animations
+    setTimeout(checkScroll, 100);
+    
+    // Preload images
+    $('img').on('load', function() {
+      $(this).addClass('loaded');
+    });
+  });
 
+  // ========================================
+  // Page Load Animation
+  // ========================================
+  
+  $(window).on('load', function() {
+    $('body').addClass('loaded');
+  });
 
-
-	/*-------------------------------------------------------------------------------
-	  Typed Text
-	-------------------------------------------------------------------------------*/
-
-	function typedText() {
-		$('.a-slide-typed').each(function() {
-			var thisSlide = $(this);
-			if (thisSlide.hasClass('active')) {
-				var typedDiv = '.a-typed-' + thisSlide.data('name');
-				$(typedDiv).html('');
-				var typedText = thisSlide.find('.a-typed').data('text');
-
-				var typedT = new Typed(typedDiv, {
-					strings: [
-						typedText
-					],
-					typeSpeed: 60,
-					startDelay: 1000,
-					loop: false,
-					showCursor: false
-				});
-			}
-		});
-	}
-
-	$(window).load(function () {
-		typedText();
-	});
-
-
-
-	/*-------------------------------------------------------------------------------
-	  Parallax
-	-------------------------------------------------------------------------------*/
-
-	if ( $('#a-parallax').length ) {
-		var scene = document.getElementById('a-parallax');
-		var parallax = new Parallax(scene);
-	}
-
-
-
-	/*-------------------------------------------------------------------------------
-	  Carousels
-	-------------------------------------------------------------------------------*/
-
-	if ( $('.a-portfolio-carousel').length ) {
-		var owl = $('.a-portfolio-carousel');
-		owl.owlCarousel({
-			items: 3,
-			smartSpeed: 750,
-			margin: 30,
-			autoplayHoverPause: true,
-			dots: true,
-			nav: false,
-			dotData: false,
-			responsive:{
-				0:{
-					items: 1
-				},
-				600:{
-					items: 2
-				},
-				900:{
-					items: 3
-				}
-			}
-		});
-	}
-
-	if ( $('.a-testimonial-carousel').length ) {
-		var owl = $('.a-testimonial-carousel');
-		owl.owlCarousel({
-			items: 1,
-			smartSpeed: 750,
-			margin: 30,
-			autoplayHoverPause: true,
-			dots: true,
-			nav: false
-		});
-	}
-
-
-
-	/*-------------------------------------------------------------------------------
-	  Ajax Forms
-	-------------------------------------------------------------------------------*/
-
-	if ($('.a-form').length) {
-		$('.a-form').each(function(){
-			$(this).validate({
-				errorClass: 'error',
-				submitHandler: function(form){
-					$.ajax({
-						type: "POST",
-						url:"mail.php",
-						data: $(form).serialize(),
-						success: function() {
-							$('.form-group-message').show();
-							$('#error').hide();
-							$('#success').show();
-						},
-						error: function(){
-							$('.form-group-message').show();
-							$('#success').hide();
-							$('#error').show();
-						}
-					});
-				}
-			});
-		});
-	}
-
-}($));
+})(jQuery);
