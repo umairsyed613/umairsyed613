@@ -2,517 +2,442 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
-    <meta name="description" content="UmairSyed Portfolio">
-    <meta name="author" content="Umair Syed">
-
-    <title>Umair Syed</title>
-
-    <!-- CSS -->
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+      content="Umair Syed - Full Stack Developer Portfolio">
+    <title>Umair Syed - Portfolio</title>
+    <script>
+// Apply saved design immediately to prevent flash
+(function() {
+  const savedDesign = localStorage.getItem('portfolioDesign') || 'modern-dark';
+  document.documentElement.setAttribute('data-design', savedDesign);
+})();
+</script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/jquery.pagepiling.css" rel="stylesheet">
     <link href="css/owl.carousel.min.css" rel="stylesheet">
     <link href="css/owl.theme.default.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
-
-    <!-- Main CSS -->
     <link href="css/style.css" rel="stylesheet">
-
   </head>
-
-  <body class="body-piling is-dark">
-    <div class="wrapper">
-      <header id="header" class="header">
-        <div class="container-fluid">
-          <div class="brand">
-            <a href="#About" class="brand-name">Umair <span class="brand-name-s">Syed</span></a>
-          </div>
-
-          <button class="nav-toggle-btn a-nav-toggle">
-            <span class="hamburger">
-              <span class="top-bun"></span>
-              <span class="meat"></span>
-              <span class="bottom-bun"></span>
-            </span>
-          </button>
-
-          <div class="hide-menu a-nav-toggle"></div>
-
-          <div class="menu">
-            <!-- <div class="menu-lang">
-              <a href="#" class="menu-lang-item active">En.</a>
-              <a href="#" class="menu-lang-item">No.</a>
-              <a href="#" class="menu-lang-item">Ur.</a>
-            </div> -->
-
-            <div class="menu-main" id="accordion">
-              <ul id="menuMain">
-                <li data-menuanchor="About" class="active"><a href="#About">About</a></li>
-                <li data-menuanchor="Skills"><a href="#Skills">Skills</a></li>
-                <!-- <li data-menuanchor="Portfolio"><a href="#Portfolio">Portfolio</a></li> -->
-                <li data-menuanchor="Contact"><a href="#Contact">Contact</a></li>
-              </ul>
-            </div>
-
-            <div class="menu-footer">
-              <div class="menu-footer-contacts">
-                <div class="menu-footer-phone"><a href="tel:+4700000000" class="phone-link">(+47) 00 00 0000</a></div>
-                <div class="menu-footer-mail"><a href="mailto:info@umairsyed.com" class="mail-link">info@umairsyed.com</a></div>
+  <body class="modern-portfolio">
+    <div class="custom-cursor" id="cursor"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="#home">
+          <span class="brand-icon">{ }</span>
+          <span class="brand-text">UMAIR<span
+              class="text-primary">.SYED</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link"
+                href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link"
+                href="#services">Services</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li> -->
+            <li class="nav-item"><a class="nav-link"
+                href="#contact">Contact</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                id="designDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span id="designIcon">🎨</span> Design
+              </a>
+              <div class="dropdown-menu dropdown-menu-right design-dropdown"
+                aria-labelledby="designDropdown">
+                <h6 class="dropdown-header">Choose Design Style</h6>
+                <a class="dropdown-item design-option active"
+                  href="javascript:void(0)" data-design="modern-dark">
+                  <span class="design-emoji">🌙</span> Modern Dark
+                </a>
+                <a class="dropdown-item design-option" href="javascript:void(0)"
+                  data-design="minimalist-light">
+                  <span class="design-emoji">☀️</span> Minimalist Light
+                </a>
+                <a class="dropdown-item design-option" href="javascript:void(0)"
+                  data-design="glassmorphism">
+                  <span class="design-emoji">💎</span> Glassmorphism
+                </a>
+                <a class="dropdown-item design-option" href="javascript:void(0)"
+                  data-design="terminal-hacker">
+                  <span class="design-emoji">💻</span> Terminal Hacker
+                </a>
+                <a class="dropdown-item design-option" href="javascript:void(0)"
+                  data-design="neo-brutalist">
+                  <span class="design-emoji">🎯</span> Neo Brutalist
+                </a>
+                <a class="dropdown-item design-option" href="javascript:void(0)"
+                  data-design="gradient-candy">
+                  <span class="design-emoji">🍭</span> Gradient Candy
+                </a>
               </div>
-              <div class="menu-footer-copyright">&copy; Umair Syed 2024. All Rights Reseverd</div>
-            </div>
-            <div class="menu-ornament"></div>
-          </div>
+            </li>
+          </ul>
         </div>
-      </header>
-
-
-      <div id="content">
-        <div class="a-pagepiling full-page">
-
-          <div class="section pp-scrollable slide slide-about a-slide-typed" data-name="about">
-            <div class="slide-container">
-              <div class="lines"><div></div><div></div><div></div><div></div></div>
-              <div class="parallax" id="a-parallax">
-                <div class="layer shape shape2" data-depth="0.4"><div class="inside animate-element delay4 bounceIn"></div></div>
-                <div class="layer shape shape3" data-depth="0.5"><div class="inside animate-element delay5 bounceIn"></div></div>
-                <div class="layer shape shape4" data-depth="0.7"><div class="inside animate-element delay4 bounceIn"></div></div>
-                <div class="layer shape shape5" data-depth="0.9"><div class="inside animate-element delay5 bounceIn"></div></div>
-                <div class="layer shape shape6" data-depth="0.2"><div class="inside animate-element delay6 bounceIn"></div></div>
-                <div class="layer shape shape7" data-depth="0.3"><div class="inside animate-element delay3 bounceIn"></div></div>
-                <div class="layer shape shape8" data-depth="0.5"><div class="inside animate-element delay8 bounceIn"></div></div>
-                <div class="layer shape shape9" data-depth="0.5"><div class="inside animate-element delay9 bounceIn"></div></div>
-                <div class="layer shape shape10" data-depth="0.2"><div class="inside animate-element delay7 bounceIn"></div></div>
-                <div class="layer shape shape11" data-depth="0.3"><div class="inside animate-element delay8 bounceIn"></div></div>
-                <div class="layer shape shape12" data-depth="0.2"><div class="inside animate-element delay9 bounceIn"></div></div>
-                <div class="layer shape shape13" data-depth="0.2"><div class="inside animate-element delay10 bounceIn"></div></div>
-                <div class="layer shape shape14" data-depth="0.2"><div class="inside animate-element delay11 bounceIn"></div></div>
-                <div class="layer shape shape15" data-depth="0.2"><div class="inside animate-element delay12 bounceIn"></div></div>
-                <div class="layer shape shape16" data-depth="0.1"><div class="inside animate-element delay13 bounceIn"></div></div>
-                <div class="layer shape shape1" data-depth="0.6"><div class="inside animate-element delay4 bounceIn"></div></div>
-              </div>
-              <div class="container">
-                <div class="row justify-content-center text-center">
-                  <div class="col-lg-8">
-                    <div class="animate-element delay5 fadeInUp">
-                      <div class="title-mini text-primary">About me</div>
-                      <h1 class="slide-title font-custom">Hello, I’m <span class="text-typed a-typed a-typed-about" data-text="Umair Syed"></span><br /> I’m working as Tech Lead.</h1>
-                    </div>
-                    <div class="slide-descr animate-element delay7 fadeInUp">I enjoy being challenged and engaging with projects that require me to work outside my comfort and knowledge set.</div>
-                    <div class="slide-photo slide-photo-about">
-                      <div class="rounded-text">
-                        <svg viewBox="0 0 200 200">
-                          <path id="textPath" d="M 85,0 A 85,85 0 0 1 -85,0 A 85,85 0 0 1 85,0" transform="translate(100,100)" fill="none" stroke-width="0"></path>
-                          <g font-size="18.5px">
-                            <text text-anchor="start">
-                              <textPath xlink:href="#textPath" startOffset="0%">C# .Net - .Net Core - Azure - Elastic Search - Databases -</textPath>
-                            </text>
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="inside"><img src="img/slide1.png" alt="" /></div>
-                    </div>
-                  </div>
-                </div>
+      </div>
+    </nav>
+    <section id="home" class="hero-section">
+      <div class="hero-background">
+        <canvas id="hero-particles"></canvas>
+        <div class="hex-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-6">
+            <div class="hero-content">
+              <!-- <div class="hero-badge">
+                <span class="badge-icon">🏆</span>
+                <span class="badge-text">Best Tech Lead 2024 - By Visma</span>
+              </div> -->
+              <h1 class="hero-title">Building <span
+                  class="text-gradient-tech">Digital Solutions</span></h1>
+              <p class="hero-description">Full-stack developer specializing in
+                modern web technologies. I create scalable applications with
+                clean code using .NET, Azure, and cloud platforms.</p>
+              <div class="hero-buttons">
+                <!-- <a href="#projects" class="btn btn-primary">View Projects</a> -->
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
               </div>
             </div>
           </div>
- 
-          <div class="section pp-scrollable slide slide-skills a-slide-typed" data-name="skills">
-            <div class="slide-container">
-              <div class="lines"><div></div><div></div><div></div><div></div></div>
-              <div class="container">
-                <div class="row align-items-center flex-row-reverse">
-                  <div class="col-md-5 slide-skills-col">
-                    <div class="animate-element delay5 fadeInUp">
-                      <div class="title-mini text-primary">my featured skills</div>
-                      <h2 class="slide-title font-custom">I’m using <span class="text-typed a-typed a-typed-skills" data-text="top leading"></span><br /> design methods.</h2>
-                    </div>
-                    <div class="slide-descr animate-element delay7 fadeInUp">
-                      As an experienced Full Stack Developer with over 14 years in the IT industry, I specialize in both front-end and back-end development, with a strong emphasis on cloud-based solutions using Azure. My diverse skill set across various technologies enables me to handle complex and multifaceted projects effectively.
-                    </div>
-          
-                    <div class="bar-list a-progressbar animate-element delay9 fadeInUp">
-                      <div class="bar-item">
-                        <div class="row">
-                          <div class="col bar-item-title">Cloud Computing</div>
-                          <div class="col-auto text-right bar-item-value">95%</div>
-                        </div>
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                      <div class="bar-item">
-                        <div class="row">
-                          <div class="col bar-item-title">Front-End Development</div>
-                          <div class="col-auto text-right bar-item-value">90%</div>
-                        </div>
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                      <div class="bar-item">
-                        <div class="row">
-                          <div class="col bar-item-title">Back-End Development</div>
-                          <div class="col-auto text-right bar-item-value">100%</div>
-                        </div>
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                      <div class="bar-item">
-                        <div class="row">
-                          <div class="col bar-item-title">Databases</div>
-                          <div class="col-auto text-right bar-item-value">100%</div>
-                        </div>
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                      <div class="bar-item">
-                        <div class="row">
-                          <div class="col bar-item-title">Development Tools & Practices</div>
-                          <div class="col-auto text-right bar-item-value">95%</div>
-                        </div>
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                      <div class="bar-item">
-                        <div class="row">
-                          <div class="col bar-item-title">Operating Systems</div>
-                          <div class="col-auto text-right bar-item-value">90%</div>
-                        </div>
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-1"></div>
-                  <div class="col-md-6">
-                    <div class="slide-photo">
-                      <div class="image-card card3-1 animate-element delay8 zoomIn">
-                        <div class="image-card-body"><div class="inside"><img src="img/slide3.png" alt="" /></div></div>
-                      </div>
-                      <div class="image-card card3-2 image-card-dark animate-element delay12 fadeInUp">
-                        <div class="image-card-body"><div class="inside"><img src="img/card3-2.png" alt="" /></div></div>
-                      </div>
-                      <div class="image-card card3-3 animate-element delay9 fadeInUp">
-                        <div class="image-card-body"><div class="inside"><img src="img/card3-3.png" alt="" /></div></div>
-                      </div>
-                      <div class="image-card card3-4 animate-element delay13 fadeInLeft">
-                        <div class="image-card-body"><div class="inside"><img src="img/card3-4.png" alt="" /></div></div>
-                      </div>
-                    </div>
-                  </div>
+          <div class="col-lg-6">
+            <div class="hero-visual">
+              <div class="hero-image-wrapper">
+                <div id="floating-circles">
+                  <svg class="rotating-circle" viewBox="0 0 200 200">
+                    <path id="circle-path"
+                      d="M 100, 100 m -85, 0 a 85, 85 0 1, 1 170, 0 a 85, 85 0 1, 1 -170, 0"
+                      fill="none"></path>
+                    <text class="circular-text">
+                      <textpath href="#circle-path">CREATIVE • DESIGN •
+                        DEVELOPMENT • CODE • AZURE • .NET • </textpath>
+                    </text>
+                  </svg>
                 </div>
-              </div>
-            </div>
-          </div>
-          
-
-          <div class="section pp-scrollable slide slide-resume slide-dark" data-name="education">
-            <div class="slide-container">
-              <div class="lines"><div></div><div></div><div></div><div></div></div>
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-1"></div>
-                  <div class="col-md-4">
-                    <div class="slide-photo slide-photo-education">
-                      <div class="slide-photo-bg-rounded photo-bg-education animate-element delay5 bounceIn">
-                        <div class="inside"><div class="education-image"><img src="img/slide4-1.png" alt="" /></div></div>
-                      </div>
-                    </div>
-                    <div class="animate-element delay9 fadeInUp">
-                      <h2 class="slide-title font-custom slide-title-margin-md">Education</h2>
-                      <div class="vacancy-item">
-                        <div class="vacancy-item-title"><a href="#">BS Computer Science</a></div>
-                        <div class="vacancy-item-place">Muhammad Ali Jinnah University</div>
-                        <div class="vacancy-item-time text-primary">2009 - 2013</div>
-                        <div class="vacancy-item-text">Major in Software Engineering</div>
-                      </div>
-                      <!-- <div class="vacancy-item">
-                        <div class="vacancy-item-title"><a href="#">Graphic Design</a></div>
-                        <div class="vacancy-item-place">Eco Design Agency, Caloforlia</div>
-                        <div class="vacancy-item-time text-primary">Jan 2004 - Dec 2006</div>
-                        <div class="vacancy-item-text">Major in Graphic Design, UX/UI Design, Product Desgin, Illustration, 3D Modeling and Marketing</div>
-                      </div> -->
-                    </div>
-                  </div>
-                  <div class="col-md-2"></div>
-                  <div class="col-md-4">
-                    <div class="slide-photo slide-photo-experience">
-                      <div class="slide-photo-bg-rounded photo-bg-experience animate-element delay7 bounceIn">
-                        <div class="inside"><div class="experience-image"><img src="img/slide4-2.png" alt="" /></div></div>
-                      </div>
-                    </div>
-                    <div class="animate-element delay11 fadeInUp">
-                      <h2 class="slide-title font-custom slide-title-margin-md">Experience</h2>
-                      <div class="vacancy-item">
-                        <div class="vacancy-item-title"><a href="#">Tech Lead</a></div>
-                        <div class="vacancy-item-place">Visma Amili AS</div>
-                        <div class="vacancy-item-time text-primary">Jun 2023 - present</div>
-                        <div class="vacancy-item-text">Tech lead.</div>
-                      </div>
-                      <div class="vacancy-item">
-                        <div class="vacancy-item-title"><a href="#">Development Team Lead / Full Stack Developer</a></div>
-                        <div class="vacancy-item-place">Convene AS</div>
-                        <div class="vacancy-item-time text-primary">Jun 2018 - Jun 2023</div>
-                        <div class="vacancy-item-text">Software Development and maintenance, Team Lead activities.</div>
-                      </div>
-                      <div class="vacancy-item">
-                        <div class="vacancy-item-title"><a href="#">Industrial IT & Automation Engineer</a></div>
-                        <div class="vacancy-item-place">anConsult AS</div>
-                        <div class="vacancy-item-time text-primary">Nov 2019 - Jun 2018</div>
-                        <div class="vacancy-item-text">Software development for industrial IT.</div>
-                      </div>
-                      <div class="vacancy-item">
-                        <div class="vacancy-item-title"><a href="#">Jr. Software Engineer</a></div>
-                        <div class="vacancy-item-place">IconSystems pvt Ltd</div>
-                        <div class="vacancy-item-time text-primary">Jun 2009 - Oct 2013</div>
-                        <div class="vacancy-item-text">Web and Software development.</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="section pp-scrollable slide slide-portfolio a-slide-typed" data-name="portfolio">
-            <div class="slide-container">
-              <div class="lines"><div></div><div></div><div></div><div></div></div>
-              <div class="slide-ornament"><div class="inside"></div></div>
-              <div class="container">
-                <div class="row justify-content-center text-center">
-                  <div class="col-lg-8 animate-element delay5 fadeInUp">
-                    <div class="title-mini text-primary">My portfolio</div>
-                    <h1 class="slide-title font-custom slide-title-margin-lg">Some of my <span class="text-typed a-typed a-typed-portfolio" data-text="latest works."></span></h1>
-                  </div>
-                </div>
-                <div class="portfolio-carousel a-portfolio-carousel owl-carousel owl-theme animate-element delay7 fadeInUp">
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen1.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">Polychromatic Logo</a></div>
-                      <div class="portfolio-item-descr">Branding Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen2.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">TextBook Redesign Acquisition</a></div>
-                      <div class="portfolio-item-descr">UX/UI Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen3.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">Clemo – Fashion Template</a></div>
-                      <div class="portfolio-item-descr">UX/UI Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen1.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">Polychromatic Logo</a></div>
-                      <div class="portfolio-item-descr">Branding Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen2.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">TextBook Redesign Acquisition</a></div>
-                      <div class="portfolio-item-descr">UX/UI Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen3.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">Clemo – Fashion Template</a></div>
-                      <div class="portfolio-item-descr">UX/UI Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen1.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">Polychromatic Logo</a></div>
-                      <div class="portfolio-item-descr">Branding Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen2.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">TextBook Redesign Acquisition</a></div>
-                      <div class="portfolio-item-descr">UX/UI Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen3.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">Clemo – Fashion Template</a></div>
-                      <div class="portfolio-item-descr">UX/UI Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen1.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">Polychromatic Logo</a></div>
-                      <div class="portfolio-item-descr">Branding Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen2.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">TextBook Redesign Acquisition</a></div>
-                      <div class="portfolio-item-descr">UX/UI Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen3.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">Clemo – Fashion Template</a></div>
-                      <div class="portfolio-item-descr">UX/UI Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen1.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">Polychromatic Logo</a></div>
-                      <div class="portfolio-item-descr">Branding Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen2.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">TextBook Redesign Acquisition</a></div>
-                      <div class="portfolio-item-descr">UX/UI Design</div>
-                    </div>
-                  </div>
-                  <div class="portfolio-item">
-                    <div class="portfolio-item-photo"><a href="#"><img src="img/portfolio-screen3.jpg" alt="" /></a></div>
-                    <div class="portfolio-item-detail">
-                      <div class="portfolio-item-title primary-link"><a href="#">Clemo – Fashion Template</a></div>
-                      <div class="portfolio-item-descr">UX/UI Design</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-          <div class="section pp-scrollable slide slide-contacts a-slide-typed" data-name="contacts">
-            <div class="slide-container">
-              <div class="lines"><div></div><div></div><div></div><div></div></div>
-              <div class="contact-ornament"></div>
-              <div class="container">
-                <div class="row justify-content-center text-center">
-                  <div class="col-lg-8">
-                    <div class="animate-element delay5 fadeInUp">
-                      <div class="title-mini text-primary">contact me</div>
-                      <h1 class="slide-title font-custom">Are you ready to <span class="text-typed a-typed a-typed-contacts" data-text="work together?"></span></h1>
-                    </div>
-                    <div class="slide-descr animate-element delay7 fadeInUp">I’m always interested in hearing about new projects and opportunities.<br /> You can <strong>tell me about the problems</strong> you are trying to solve. I'd love to listen and see if there's anything I can do to help you.</div>
-                    <div class="slide-btn animate-element delay9 fadeInUp"><a href="#" class="btn btn-dark" data-toggle="modal" data-target="#request">submit a request</a></div>
-                  </div>
-                </div>
-                <div class="row align-items-center text-center contacts animate-element delay11 fadeInUp">
-                  <div class="col-md-4">
-                    <div class="contact-item contact-item-phone"><a href="tel:+4700000000" class="phone-link">(+47) 00 00 0000</a></div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="contact-item"><a href="mailto:info@umairsyed.com" class="mail-link">info@umairsyed.com</a></div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="contact-item">Oslo, Norway</div>
-                  </div>
-                </div>
+                <img src="img/slide1.png" alt="Umair Syed" class="hero-image">
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-
-      <footer id="footer" class="footer">
-        <div class="container-fluid">
-          <div class="copyright">© Umair 2024.</div>
-          <div class="footer-social">
-            <ul class="social">
-              <li><a href="https://twitter.com/umairsyed613"><i class="icon-twitter"></i></a></li>
-              <li><a href="https://github.com/umairsyed613"><i class="icon-github"></i></a></li>
-              <li><a href="https://www.linkedin.com/in/umairsyed613/"><i class="icon-linkedin"></i></a></li>
-            </ul>
-            <!-- <div class="chat">
-              <div class="chat-title">Let’s chat</div>
-              <a href="#" class="chat-btn has-new"><i class="icon-chat"></i></a>
-            </div> -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="stats-grid">
+              <div class="stat-card"><div class="stat-icon">📅</div><h3
+                  class="stat-number" data-count="15">0+</h3><p
+                  class="stat-label">Years Coding</p></div>
+              <div class="stat-card"><div class="stat-icon">💼</div><h3
+                  class="stat-number" data-count="50">0+</h3><p
+                  class="stat-label">Projects Completed</p></div>
+              <div class="stat-card"><div class="stat-icon">😊</div><h3
+                  class="stat-number" data-count="25">0+</h3><p
+                  class="stat-label">Happy Clients</p></div>
+              <div class="stat-card"><div class="stat-icon">⭐</div><h3
+                  class="stat-number" data-count="95">0%</h3><p
+                  class="stat-label">Code Quality</p></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="code-display">
+              <pre><code><span class="code-keyword">class</span> <span class="code-class">UmairSyed</span> {
+  <span class="code-property">name</span>: <span class="code-string">"Umair Syed"</span>,
+  <span class="code-property">role</span>: <span class="code-string">"Tech Lead"</span>,
+  <span class="code-property">skills</span>: {
+    <span class="code-property">backend</span>: [
+      <span class="code-string">"C# & .NET Core"</span>,
+      <span class="code-string">"Azure & Cloud"</span>,
+    ],
+    <span class="code-property">frontend</span>: [
+      <span class="code-string">"React & TypeScript"</span>,
+      <span class="code-string">"Angular & Vue"</span>,
+    ]
+  }
+}</code></pre>
+            </div>
           </div>
         </div>
-      </footer>
-
-
-      <div class="progress-nav">
-        <ul id="menu">
-          <li data-menuanchor="About" class="active"></li>
-          <li data-menuanchor="Skills"></li>
-          <li data-menuanchor="Portfolio"></li>
-          <li data-menuanchor="Contact"></li>
-        </ul>
       </div>
+    </section>
 
-
-    </div>
-
-
-    <div class="modal fade" id="request" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <form class="a-form" novalidate="novalidate">
-              <div class="row">
-                <div class="form-group col-sm-6">
-                  <input type="text" class="form-control" name="name" required="" placeholder="Name*" aria-required="true">
-                </div>
-                <div class="form-group col-sm-6">
-                  <input type="email" class="form-control" required="" name="email" placeholder="Email*">
-                </div>
-                <div class="form-group col-sm-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject (Optinal)">
-                </div>
-                <div class="form-group col-sm-12">
-                  <textarea name="message" class="form-control" required="" placeholder="Message*"></textarea>
-                </div>
-                <div class="form-group form-group-message col-sm-12">
-                  <span id="success" class="text-primary">Thank You, your message is successfully sent!</span>
-                  <span id="error" class="text-primary">Sorry, something went wrong </span>
-                </div>
-                <div class="col-sm-12 text-center"><button type="submit" class="btn btn-dark">Contact me</button></div>
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h2 class="section-title">Umair Syed</h2>
+            <p class="lead">I'm a passionate Full Stack Developer with over 15+
+              years of experience in building scalable web applications. My
+              expertise lies in creating seamless user experiences with modern
+              technologies.</p>
+            <h3 class="mt-5 mb-4">Work History</h3>
+            <div class="work-history">
+              <div class="work-item">
+                <h4>Tech Lead</h4>
+                <p class="company">Visma Amili AS <span
+                    class="text-primary">(Jun 2023 - Present)</span></p>
+                <p>Leading development teams in building cloud-based healthcare
+                  solutions using .NET Core and Azure.</p>
               </div>
+              <div class="work-item">
+                <h4>Development Team Lead / Full Stack Developer</h4>
+                <p class="company">Convene AS <span class="text-primary">(Jun
+                    2018 - Jun 2023)</span></p>
+                <p>Software development and maintenance, team lead activities
+                  for enterprise applications.</p>
+              </div>
+            </div>
+            <h3 class="mt-5 mb-4">My Skills</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="d-flex justify-content-between mb-2"><span>Cloud
+                    Computing (Azure)</span><span>95%</span></div>
+                <div class="progress"><div class="progress-bar"
+                    role="progressbar" style="width: 95%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="d-flex justify-content-between mb-2"><span>Backend
+                    (.NET Core, C#)</span><span>100%</span></div>
+                <div class="progress"><div class="progress-bar"
+                    role="progressbar" style="width: 100%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="d-flex justify-content-between mb-2"><span>Frontend
+                    (React, Angular)</span><span>90%</span></div>
+                <div class="progress"><div class="progress-bar"
+                    role="progressbar" style="width: 90%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-image"><img src="img/slide3.png"
+                alt="About Umair Syed" class="img-fluid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="text-center mb-5"><h2 class="section-title">How I Can
+            Help</h2></div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card"><div class="service-icon">💻</div><h3>Web
+                Development</h3><p>Crafting responsive and scalable web
+                applications using modern frameworks like React and
+                Angular.</p></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card"><div
+                class="service-icon">⚙️</div><h3>Backend
+                Development</h3><p>Building robust server-side solutions with
+                .NET Core, C#, and microservices architecture.</p></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card"><div
+                class="service-icon">🎨</div><h3>System Design</h3><p>Designing
+                scalable and maintainable system architectures with focus on
+                performance.</p></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card"><div
+                class="service-icon">☁️</div><h3>Cloud
+                Solutions</h3><p>Deploying and managing applications on Azure
+                cloud platform for scalability and reliability.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="projects" class="projects-section">
+<div class="container">
+<div class="text-center mb-5"><h2 class="section-title">Featured Projects</h2></div>
+<div class="row">
+<div class="col-lg-4 col-md-6 mb-4">
+<div class="project-card">
+<div class="project-image">
+<img src="img/slide3.png" alt="Healthcare Platform">
+<div class="project-overlay"><span class="badge badge-success">Public</span></div>
+</div>
+<div class="project-content">
+<h3>Healthcare Management System</h3>
+<p>A comprehensive healthcare management platform built with .NET Core and Azure, improving patient care efficiency by 80%.</p>
+<div class="project-meta"><span class="language">C#</span><span class="stars">⭐ 145</span><span class="forks">🔱 52</span></div>
+<div class="project-links">
+<a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+<a href="https://github.com/umairsyed613" class="btn btn-sm btn-outline">Repository</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mb-4">
+<div class="project-card">
+<div class="project-image">
+<img src="img/card3-2.png" alt="E-Commerce Platform">
+<div class="project-overlay"><span class="badge badge-success">Public</span></div>
+</div>
+<div class="project-content">
+<h3>E-Commerce Platform</h3>
+<p>A modern e-commerce solution with real-time inventory, payment integration, and analytics dashboard.</p>
+<div class="project-meta"><span class="language">TypeScript</span><span class="stars">⭐ 98</span><span class="forks">🔱 35</span></div>
+<div class="project-links">
+<a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+<a href="https://github.com/umairsyed613" class="btn btn-sm btn-outline">Repository</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mb-4">
+<div class="project-card">
+<div class="project-image">
+<img src="img/card3-3.png" alt="Analytics Dashboard">
+<div class="project-overlay"><span class="badge badge-success">Public</span></div>
+</div>
+<div class="project-content">
+<h3>Analytics Dashboard</h3>
+<p>A powerful analytics platform for tracking business metrics with real-time data visualization.</p>
+<div class="project-meta"><span class="language">React</span><span class="stars">⭐ 76</span><span class="forks">🔱 28</span></div>
+<div class="project-links">
+<a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+<a href="https://github.com/umairsyed613" class="btn btn-sm btn-outline">Repository</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-4"><a href="https://github.com/umairsyed613" class="btn btn-primary">See All Projects</a></div>
+</div>
+</section> -->
+
+    <!-- <section class="testimonials-section">
+      <div class="container">
+        <div class="text-center mb-5"><h2 class="section-title">What Clients
+            Say</h2></div>
+        <div class="testimonials-slider">
+          <div class="testimonial-card">
+            <p
+              class="testimonial-text">"Umair delivered an outstanding healthcare platform that transformed our operations. His attention to detail and technical expertise are unmatched!"</p>
+            <div class="testimonial-author">
+              <img src="img/slide1.png" alt="Client" class="author-image">
+              <div class="author-info">
+                <h4 class="author-name">Sarah Johnson</h4>
+                <p class="author-role">CEO, Healthcare Solutions</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p
+              class="testimonial-text">"Working with Umair was a game-changer. His cloud solutions streamlined our workflows and boosted productivity significantly."</p>
+            <div class="testimonial-author">
+              <img src="img/slide2.png" alt="Client" class="author-image">
+              <div class="author-info">
+                <h4 class="author-name">Michael Lee</h4>
+                <p class="author-role">CTO, TechSync</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p
+              class="testimonial-text">"Umair's e-commerce platform is intuitive and powerful. It has become an essential tool for our business growth."</p>
+            <div class="testimonial-author">
+              <img src="img/slide3.png" alt="Client" class="author-image">
+              <div class="author-info">
+                <h4 class="author-name">Emily Davis</h4>
+                <p class="author-role">Founder, ShopSmart</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="text-center mb-5"><h2 class="section-title">Connect With Me
+            Today</h2></div>
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h3 class="mb-4">Let's Talk</h3>
+            <p class="lead mb-5">I'm excited to collaborate on innovative
+              projects or discuss your next big idea. Reach out via email,
+              phone, or social media!</p>
+            <h4 class="mb-3">Contact Details</h4>
+            <div class="contact-info">
+              <div class="contact-item"><span class="contact-icon">📧</span><a
+                  href="mailto:info@umairsyed.com">info@umairsyed.com</a></div>
+              <div class="contact-item"><span class="contact-icon">📱</span><a
+                  href="tel:+4700000000">(+47) 00 00 0000</a></div>
+              <div class="contact-item"><span
+                  class="contact-icon">📍</span><span>Oslo, Norway</span></div>
+            </div>
+            <h4 class="mt-5 mb-3">Stay Connected</h4>
+            <div class="social-links">
+              <a href="https://github.com/umairsyed613"
+                class="social-link"><span class="social-icon">GitHub</span></a>
+              <a href="https://www.linkedin.com/in/umairsyed613/"
+                class="social-link"><span
+                  class="social-icon">LinkedIn</span></a>
+              <a href="https://twitter.com/umairsyed613"
+                class="social-link"><span class="social-icon">Twitter</span></a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="mb-4">Send a Message</h3>
+            <form id="contactForm" class="contact-form">
+              <div class="form-group"><label>Full Name</label><input type="text"
+                  name="name" class="form-control" placeholder="Enter your name"
+                  required></div>
+              <div class="form-group"><label>Email Address</label><input
+                  type="email" name="email" class="form-control"
+                  placeholder="Enter your email" required></div>
+              <div class="form-group"><label>Your Message</label><textarea
+                  name="message" class="form-control" rows="5"
+                  placeholder="Write your message here"
+                  required></textarea></div>
+              <button type="submit" class="btn btn-primary btn-block">Send
+                Message</button>
+              <div id="formMessage" class="mt-3"></div>
             </form>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="footer-brand"><span class="brand-icon">{ }</span><span
+                class="brand-text">UMAIR.SYED</span></div>
+            <div class="footer-links">
+              <a href="#home">Home</a>
+              <a href="#about">About</a>
+              <a href="#services">Services</a>
+              <!-- <a href="#projects">Projects</a> -->
+              <a href="#contact">Contact</a>
+              <a href="privacy-policy.html">Privacy</a>
+            </div>
+          </div>
+          <div class="col-lg-6 text-lg-right">
+            <p class="copyright">© 2025 Umair Syed. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
-    <script src="js/smoothscroll.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.pagepiling.min.js"></script>
-    <script src="js/jquery.viewport.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/typed.min.js"></script>
-    <script src="js/parallax.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/script.js"></script>
-
+    <script src="js/script.js?v=2"></script>
   </body>
 </html>
