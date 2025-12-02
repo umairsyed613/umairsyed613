@@ -1,91 +1,155 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Umair Syed - Full Stack Developer Portfolio">
-<title>Umair Syed - Portfolio</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/owl.carousel.min.css" rel="stylesheet">
-<link href="css/owl.theme.default.min.css" rel="stylesheet">
-<link href="css/animate.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-</head>
-<body class="modern-portfolio">
-<div class="custom-cursor" id="cursor"></div>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-<div class="container">
-<a class="navbar-brand" href="#home">
-<span class="brand-icon">{ }</span>
-<span class="brand-text">UMAIR<span class="text-primary">.SYED</span></span>
-</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav ml-auto">
-<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-<li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-<li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-</ul>
-</div>
-</div>
-</nav>
-<section id="home" class="hero-section">
-<div class="hero-background">
-<div class="hex-pattern"></div>
-</div>
-<div class="container">
-<div class="row align-items-center min-vh-100">
-<div class="col-lg-6">
-<div class="hero-content">
-<div class="hero-badge">
-<span class="badge-icon">🏆</span>
-<span class="badge-text">Best Tech Lead 2024 - By Visma</span>
-</div>
-<h1 class="hero-title">Building <span class="text-gradient-tech">Digital Solutions</span></h1>
-<p class="hero-description">Full-stack developer specializing in modern web technologies. I create scalable applications with clean code using .NET, Azure, and cloud platforms.</p>
-<div class="hero-buttons">
-<a href="#projects" class="btn btn-primary">View Projects</a>
-<a href="#contact" class="btn btn-outline">Get In Touch</a>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="hero-visual">
-<div class="hero-image-wrapper">
-<div id="floating-circles">
-<svg class="rotating-circle" viewBox="0 0 200 200">
-<path id="circle-path" d="M 100, 100 m -85, 0 a 85, 85 0 1, 1 170, 0 a 85, 85 0 1, 1 -170, 0" fill="none"></path>
-<text class="circular-text">
-<textPath href="#circle-path">CREATIVE • DESIGN • DEVELOPMENT • CODE • AZURE • .NET • </textPath>
-</text>
-</svg>
-</div>
-<img src="img/slide1.png" alt="Umair Syed" class="hero-image">
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+      content="Umair Syed - Full Stack Developer Portfolio">
+    <title>Umair Syed - Portfolio</title>
+    <script>
+// Apply saved design immediately to prevent flash
+(function() {
+  const savedDesign = localStorage.getItem('portfolioDesign') || 'modern-dark';
+  document.documentElement.setAttribute('data-design', savedDesign);
+})();
+</script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/owl.theme.default.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body class="modern-portfolio">
+    <div class="custom-cursor" id="cursor"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="#home">
+          <span class="brand-icon">{ }</span>
+          <span class="brand-text">UMAIR<span
+              class="text-primary">.SYED</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link"
+                href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link"
+                href="#services">Services</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li> -->
+            <li class="nav-item"><a class="nav-link"
+                href="#contact">Contact</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                id="designDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span id="designIcon">🎨</span> Design
+              </a>
+              <div class="dropdown-menu dropdown-menu-right design-dropdown"
+                aria-labelledby="designDropdown">
+                <h6 class="dropdown-header">Choose Design Style</h6>
+                <a class="dropdown-item design-option active"
+                  href="javascript:void(0)" data-design="modern-dark">
+                  <span class="design-emoji">🌙</span> Modern Dark
+                </a>
+                <a class="dropdown-item design-option" href="javascript:void(0)"
+                  data-design="minimalist-light">
+                  <span class="design-emoji">☀️</span> Minimalist Light
+                </a>
+                <a class="dropdown-item design-option" href="javascript:void(0)"
+                  data-design="glassmorphism">
+                  <span class="design-emoji">💎</span> Glassmorphism
+                </a>
+                <a class="dropdown-item design-option" href="javascript:void(0)"
+                  data-design="terminal-hacker">
+                  <span class="design-emoji">💻</span> Terminal Hacker
+                </a>
+                <a class="dropdown-item design-option" href="javascript:void(0)"
+                  data-design="neo-brutalist">
+                  <span class="design-emoji">🎯</span> Neo Brutalist
+                </a>
+                <a class="dropdown-item design-option" href="javascript:void(0)"
+                  data-design="gradient-candy">
+                  <span class="design-emoji">🍭</span> Gradient Candy
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="home" class="hero-section">
+      <div class="hero-background">
+        <canvas id="hero-particles"></canvas>
+        <div class="hex-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-6">
+            <div class="hero-content">
+              <!-- <div class="hero-badge">
+                <span class="badge-icon">🏆</span>
+                <span class="badge-text">Best Tech Lead 2024 - By Visma</span>
+              </div> -->
+              <h1 class="hero-title">Building <span
+                  class="text-gradient-tech">Digital Solutions</span></h1>
+              <p class="hero-description">Full-stack developer specializing in
+                modern web technologies. I create scalable applications with
+                clean code using .NET, Azure, and cloud platforms.</p>
+              <div class="hero-buttons">
+                <!-- <a href="#projects" class="btn btn-primary">View Projects</a> -->
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-visual">
+              <div class="hero-image-wrapper">
+                <div id="floating-circles">
+                  <svg class="rotating-circle" viewBox="0 0 200 200">
+                    <path id="circle-path"
+                      d="M 100, 100 m -85, 0 a 85, 85 0 1, 1 170, 0 a 85, 85 0 1, 1 -170, 0"
+                      fill="none"></path>
+                    <text class="circular-text">
+                      <textpath href="#circle-path">CREATIVE • DESIGN •
+                        DEVELOPMENT • CODE • AZURE • .NET • </textpath>
+                    </text>
+                  </svg>
+                </div>
+                <img src="img/slide1.png" alt="Umair Syed" class="hero-image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="stats-section">
-<div class="container">
-<div class="row align-items-center">
-<div class="col-lg-6 mb-5 mb-lg-0">
-<div class="stats-grid">
-<div class="stat-card"><div class="stat-icon">📅</div><h3 class="stat-number" data-count="14">0+</h3><p class="stat-label">Years Coding</p></div>
-<div class="stat-card"><div class="stat-icon">💼</div><h3 class="stat-number" data-count="50">0+</h3><p class="stat-label">Projects Completed</p></div>
-<div class="stat-card"><div class="stat-icon">😊</div><h3 class="stat-number" data-count="25">0+</h3><p class="stat-label">Happy Clients</p></div>
-<div class="stat-card"><div class="stat-icon">⭐</div><h3 class="stat-number" data-count="95">0%</h3><p class="stat-label">Code Quality</p></div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="code-display">
-<pre><code><span class="code-keyword">class</span> <span class="code-class">UmairSyed</span> {
+    <section class="stats-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="stats-grid">
+              <div class="stat-card"><div class="stat-icon">📅</div><h3
+                  class="stat-number" data-count="15">0+</h3><p
+                  class="stat-label">Years Coding</p></div>
+              <div class="stat-card"><div class="stat-icon">💼</div><h3
+                  class="stat-number" data-count="50">0+</h3><p
+                  class="stat-label">Projects Completed</p></div>
+              <div class="stat-card"><div class="stat-icon">😊</div><h3
+                  class="stat-number" data-count="25">0+</h3><p
+                  class="stat-label">Happy Clients</p></div>
+              <div class="stat-card"><div class="stat-icon">⭐</div><h3
+                  class="stat-number" data-count="95">0%</h3><p
+                  class="stat-label">Code Quality</p></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="code-display">
+              <pre><code><span class="code-keyword">class</span> <span class="code-class">UmairSyed</span> {
   <span class="code-property">name</span>: <span class="code-string">"Umair Syed"</span>,
   <span class="code-property">role</span>: <span class="code-string">"Tech Lead"</span>,
   <span class="code-property">skills</span>: {
@@ -99,75 +163,102 @@
     ]
   }
 }</code></pre>
-</div>
-</div>
-</div>
-</div>
-</section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="about" class="about-section">
-<div class="container">
-<div class="row align-items-center">
-<div class="col-lg-6 mb-5 mb-lg-0">
-<h2 class="section-title">Umair Syed</h2>
-<p class="lead">I'm a passionate Full Stack Developer with over 14 years of experience in building scalable web applications. My expertise lies in creating seamless user experiences with modern technologies.</p>
-<h3 class="mt-5 mb-4">Work History</h3>
-<div class="work-history">
-<div class="work-item">
-<h4>Tech Lead</h4>
-<p class="company">Visma Amili AS <span class="text-primary">(Jun 2023 - Present)</span></p>
-<p>Leading development teams in building cloud-based healthcare solutions using .NET Core and Azure.</p>
-</div>
-<div class="work-item">
-<h4>Development Team Lead / Full Stack Developer</h4>
-<p class="company">Convene AS <span class="text-primary">(Jun 2018 - Jun 2023)</span></p>
-<p>Software development and maintenance, team lead activities for enterprise applications.</p>
-</div>
-</div>
-<h3 class="mt-5 mb-4">My Skills</h3>
-<div class="skills-list">
-<div class="skill-item">
-<div class="d-flex justify-content-between mb-2"><span>Cloud Computing (Azure)</span><span>95%</span></div>
-<div class="progress"><div class="progress-bar" role="progressbar" style="width: 95%"></div></div>
-</div>
-<div class="skill-item">
-<div class="d-flex justify-content-between mb-2"><span>Backend (.NET Core, C#)</span><span>100%</span></div>
-<div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
-</div>
-<div class="skill-item">
-<div class="d-flex justify-content-between mb-2"><span>Frontend (React, Angular)</span><span>90%</span></div>
-<div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%"></div></div>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="about-image"><img src="img/slide3.png" alt="About Umair Syed" class="img-fluid"></div>
-</div>
-</div>
-</div>
-</section>
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h2 class="section-title">Umair Syed</h2>
+            <p class="lead">I'm a passionate Full Stack Developer with over 15+
+              years of experience in building scalable web applications. My
+              expertise lies in creating seamless user experiences with modern
+              technologies.</p>
+            <h3 class="mt-5 mb-4">Work History</h3>
+            <div class="work-history">
+              <div class="work-item">
+                <h4>Tech Lead</h4>
+                <p class="company">Visma Amili AS <span
+                    class="text-primary">(Jun 2023 - Present)</span></p>
+                <p>Leading development teams in building cloud-based healthcare
+                  solutions using .NET Core and Azure.</p>
+              </div>
+              <div class="work-item">
+                <h4>Development Team Lead / Full Stack Developer</h4>
+                <p class="company">Convene AS <span class="text-primary">(Jun
+                    2018 - Jun 2023)</span></p>
+                <p>Software development and maintenance, team lead activities
+                  for enterprise applications.</p>
+              </div>
+            </div>
+            <h3 class="mt-5 mb-4">My Skills</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="d-flex justify-content-between mb-2"><span>Cloud
+                    Computing (Azure)</span><span>95%</span></div>
+                <div class="progress"><div class="progress-bar"
+                    role="progressbar" style="width: 95%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="d-flex justify-content-between mb-2"><span>Backend
+                    (.NET Core, C#)</span><span>100%</span></div>
+                <div class="progress"><div class="progress-bar"
+                    role="progressbar" style="width: 100%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="d-flex justify-content-between mb-2"><span>Frontend
+                    (React, Angular)</span><span>90%</span></div>
+                <div class="progress"><div class="progress-bar"
+                    role="progressbar" style="width: 90%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-image"><img src="img/slide3.png"
+                alt="About Umair Syed" class="img-fluid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="services" class="services-section">
-<div class="container">
-<div class="text-center mb-5"><h2 class="section-title">How I Can Help</h2></div>
-<div class="row">
-<div class="col-lg-3 col-md-6 mb-4">
-<div class="service-card"><div class="service-icon">💻</div><h3>Web Development</h3><p>Crafting responsive and scalable web applications using modern frameworks like React and Angular.</p></div>
-</div>
-<div class="col-lg-3 col-md-6 mb-4">
-<div class="service-card"><div class="service-icon">⚙️</div><h3>Backend Development</h3><p>Building robust server-side solutions with .NET Core, C#, and microservices architecture.</p></div>
-</div>
-<div class="col-lg-3 col-md-6 mb-4">
-<div class="service-card"><div class="service-icon">🎨</div><h3>System Design</h3><p>Designing scalable and maintainable system architectures with focus on performance.</p></div>
-</div>
-<div class="col-lg-3 col-md-6 mb-4">
-<div class="service-card"><div class="service-icon">☁️</div><h3>Cloud Solutions</h3><p>Deploying and managing applications on Azure cloud platform for scalability and reliability.</p></div>
-</div>
-</div>
-</div>
-</section>
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="text-center mb-5"><h2 class="section-title">How I Can
+            Help</h2></div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card"><div class="service-icon">💻</div><h3>Web
+                Development</h3><p>Crafting responsive and scalable web
+                applications using modern frameworks like React and
+                Angular.</p></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card"><div
+                class="service-icon">⚙️</div><h3>Backend
+                Development</h3><p>Building robust server-side solutions with
+                .NET Core, C#, and microservices architecture.</p></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card"><div
+                class="service-icon">🎨</div><h3>System Design</h3><p>Designing
+                scalable and maintainable system architectures with focus on
+                performance.</p></div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card"><div
+                class="service-icon">☁️</div><h3>Cloud
+                Solutions</h3><p>Deploying and managing applications on Azure
+                cloud platform for scalability and reliability.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="projects" class="projects-section">
+    <!-- <section id="projects" class="projects-section">
 <div class="container">
 <div class="text-center mb-5"><h2 class="section-title">Featured Projects</h2></div>
 <div class="row">
@@ -225,191 +316,128 @@
 </div>
 <div class="text-center mt-4"><a href="https://github.com/umairsyed613" class="btn btn-primary">See All Projects</a></div>
 </div>
-</section>
+</section> -->
 
-<section class="pricing-section">
-<div class="container">
-<div class="row">
-<div class="col-lg-6 mb-5 mb-lg-0">
-<div class="text-center mb-5"><h2 class="section-title">Pricing Plans</h2></div>
-<div class="row">
-<div class="col-md-6 mb-4">
-<div class="pricing-card">
-<h3 class="pricing-title">Basic Plan</h3>
-<div class="pricing-price">
-<span class="price-currency">$</span>
-<span class="price-amount">2,500</span>
-</div>
-<p class="pricing-description">Perfect for startups and small businesses looking to establish an online presence.</p>
-<ul class="pricing-features">
-<li><span class="feature-icon">✓</span>Custom Website (Up to 5 Pages)</li>
-<li><span class="feature-icon">✓</span>Responsive Design</li>
-<li><span class="feature-icon">✓</span>Basic SEO Optimization</li>
-<li><span class="feature-icon">✓</span>1 Month Support</li>
-</ul>
-<a href="#contact" class="btn btn-primary btn-block">Contact Me</a>
-</div>
-</div>
-<div class="col-md-6 mb-4">
-<div class="pricing-card pricing-card-featured">
-<h3 class="pricing-title">Pro Plan</h3>
-<div class="pricing-price">
-<span class="price-currency">$</span>
-<span class="price-amount">5,000</span>
-</div>
-<p class="pricing-description">Ideal for growing businesses needing advanced features and scalability.</p>
-<ul class="pricing-features">
-<li><span class="feature-icon">✓</span>Custom Website (Unlimited Pages)</li>
-<li><span class="feature-icon">✓</span>E-Commerce Integration</li>
-<li><span class="feature-icon">✓</span>Advanced SEO & Analytics</li>
-<li><span class="feature-icon">✓</span>3 Months Support</li>
-</ul>
-<a href="#contact" class="btn btn-primary btn-block">Contact Me</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="text-center mb-5"><h2 class="section-title">Frequently Asked Questions</h2></div>
-<div class="faq-container">
-<div class="faq-item">
-<button class="faq-question" type="button">
-<span>What technologies do you use for development?</span>
-<span class="faq-icon">+</span>
-</button>
-<div class="faq-answer">
-<p>I specialize in .NET Core, C#, Azure, React, Angular, and modern cloud technologies. I choose the best tools based on project requirements.</p>
-</div>
-</div>
-<div class="faq-item">
-<button class="faq-question" type="button">
-<span>How long does a typical project take?</span>
-<span class="faq-icon">+</span>
-</button>
-<div class="faq-answer">
-<p>Project timelines vary based on complexity, but most websites take 4-8 weeks from start to launch. I'll provide a detailed timeline during our initial consultation.</p>
-</div>
-</div>
-<div class="faq-item">
-<button class="faq-question" type="button">
-<span>Do you offer post-launch support?</span>
-<span class="faq-icon">+</span>
-</button>
-<div class="faq-answer">
-<p>Yes! All plans include post-launch support ranging from 1 to 3 months. I also offer ongoing maintenance packages for long-term partnerships.</p>
-</div>
-</div>
-<div class="faq-item">
-<button class="faq-question" type="button">
-<span>Can you work with existing codebases?</span>
-<span class="faq-icon">+</span>
-</button>
-<div class="faq-answer">
-<p>Absolutely! I have extensive experience working with legacy code, refactoring, and modernizing existing applications.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+    <!-- <section class="testimonials-section">
+      <div class="container">
+        <div class="text-center mb-5"><h2 class="section-title">What Clients
+            Say</h2></div>
+        <div class="testimonials-slider">
+          <div class="testimonial-card">
+            <p
+              class="testimonial-text">"Umair delivered an outstanding healthcare platform that transformed our operations. His attention to detail and technical expertise are unmatched!"</p>
+            <div class="testimonial-author">
+              <img src="img/slide1.png" alt="Client" class="author-image">
+              <div class="author-info">
+                <h4 class="author-name">Sarah Johnson</h4>
+                <p class="author-role">CEO, Healthcare Solutions</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p
+              class="testimonial-text">"Working with Umair was a game-changer. His cloud solutions streamlined our workflows and boosted productivity significantly."</p>
+            <div class="testimonial-author">
+              <img src="img/slide2.png" alt="Client" class="author-image">
+              <div class="author-info">
+                <h4 class="author-name">Michael Lee</h4>
+                <p class="author-role">CTO, TechSync</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p
+              class="testimonial-text">"Umair's e-commerce platform is intuitive and powerful. It has become an essential tool for our business growth."</p>
+            <div class="testimonial-author">
+              <img src="img/slide3.png" alt="Client" class="author-image">
+              <div class="author-info">
+                <h4 class="author-name">Emily Davis</h4>
+                <p class="author-role">Founder, ShopSmart</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
 
-<section class="testimonials-section">
-<div class="container">
-<div class="testimonials-slider">
-<div class="testimonial-card">
-<p class="testimonial-text">"Umair delivered an outstanding healthcare platform that transformed our operations. His attention to detail and technical expertise are unmatched!"</p>
-<div class="testimonial-author">
-<img src="img/slide1.png" alt="Client" class="author-image">
-<div class="author-info">
-<h4 class="author-name">Sarah Johnson</h4>
-<p class="author-role">CEO, Healthcare Solutions</p>
-</div>
-</div>
-</div>
-<div class="testimonial-card">
-<p class="testimonial-text">"Working with Umair was a game-changer. His cloud solutions streamlined our workflows and boosted productivity significantly."</p>
-<div class="testimonial-author">
-<img src="img/slide2.png" alt="Client" class="author-image">
-<div class="author-info">
-<h4 class="author-name">Michael Lee</h4>
-<p class="author-role">CTO, TechSync</p>
-</div>
-</div>
-</div>
-<div class="testimonial-card">
-<p class="testimonial-text">"Umair's e-commerce platform is intuitive and powerful. It has become an essential tool for our business growth."</p>
-<div class="testimonial-author">
-<img src="img/slide3.png" alt="Client" class="author-image">
-<div class="author-info">
-<h4 class="author-name">Emily Davis</h4>
-<p class="author-role">Founder, ShopSmart</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="text-center mb-5"><h2 class="section-title">Connect With Me
+            Today</h2></div>
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h3 class="mb-4">Let's Talk</h3>
+            <p class="lead mb-5">I'm excited to collaborate on innovative
+              projects or discuss your next big idea. Reach out via email,
+              phone, or social media!</p>
+            <h4 class="mb-3">Contact Details</h4>
+            <div class="contact-info">
+              <div class="contact-item"><span class="contact-icon">📧</span><a
+                  href="mailto:info@umairsyed.com">info@umairsyed.com</a></div>
+              <div class="contact-item"><span class="contact-icon">📱</span><a
+                  href="tel:+4700000000">(+47) 00 00 0000</a></div>
+              <div class="contact-item"><span
+                  class="contact-icon">📍</span><span>Oslo, Norway</span></div>
+            </div>
+            <h4 class="mt-5 mb-3">Stay Connected</h4>
+            <div class="social-links">
+              <a href="https://github.com/umairsyed613"
+                class="social-link"><span class="social-icon">GitHub</span></a>
+              <a href="https://www.linkedin.com/in/umairsyed613/"
+                class="social-link"><span
+                  class="social-icon">LinkedIn</span></a>
+              <a href="https://twitter.com/umairsyed613"
+                class="social-link"><span class="social-icon">Twitter</span></a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="mb-4">Send a Message</h3>
+            <form id="contactForm" class="contact-form">
+              <div class="form-group"><label>Full Name</label><input type="text"
+                  name="name" class="form-control" placeholder="Enter your name"
+                  required></div>
+              <div class="form-group"><label>Email Address</label><input
+                  type="email" name="email" class="form-control"
+                  placeholder="Enter your email" required></div>
+              <div class="form-group"><label>Your Message</label><textarea
+                  name="message" class="form-control" rows="5"
+                  placeholder="Write your message here"
+                  required></textarea></div>
+              <button type="submit" class="btn btn-primary btn-block">Send
+                Message</button>
+              <div id="formMessage" class="mt-3"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="contact" class="contact-section">
-<div class="container">
-<div class="text-center mb-5"><h2 class="section-title">Connect With Me Today</h2></div>
-<div class="row">
-<div class="col-lg-6 mb-5 mb-lg-0">
-<h3 class="mb-4">Let's Talk</h3>
-<p class="lead mb-5">I'm excited to collaborate on innovative projects or discuss your next big idea. Reach out via email, phone, or social media!</p>
-<h4 class="mb-3">Contact Details</h4>
-<div class="contact-info">
-<div class="contact-item"><span class="contact-icon">📧</span><a href="mailto:info@umairsyed.com">info@umairsyed.com</a></div>
-<div class="contact-item"><span class="contact-icon">📱</span><a href="tel:+4700000000">(+47) 00 00 0000</a></div>
-<div class="contact-item"><span class="contact-icon">📍</span><span>Oslo, Norway</span></div>
-</div>
-<h4 class="mt-5 mb-3">Stay Connected</h4>
-<div class="social-links">
-<a href="https://github.com/umairsyed613" class="social-link">GitHub</a>
-<a href="https://www.linkedin.com/in/umairsyed613/" class="social-link">LinkedIn</a>
-<a href="https://twitter.com/umairsyed613" class="social-link">Twitter</a>
-</div>
-</div>
-<div class="col-lg-6">
-<h3 class="mb-4">Send a Message</h3>
-<form id="contactForm" class="contact-form">
-<div class="form-group"><label>Full Name</label><input type="text" name="name" class="form-control" placeholder="Enter your name" required></div>
-<div class="form-group"><label>Email Address</label><input type="email" name="email" class="form-control" placeholder="Enter your email" required></div>
-<div class="form-group"><label>Your Message</label><textarea name="message" class="form-control" rows="5" placeholder="Write your message here" required></textarea></div>
-<button type="submit" class="btn btn-primary btn-block">Send Message</button>
-<div id="formMessage" class="mt-3"></div>
-</form>
-</div>
-</div>
-</div>
-</section>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="footer-brand"><span class="brand-icon">{ }</span><span
+                class="brand-text">UMAIR.SYED</span></div>
+            <div class="footer-links">
+              <a href="#home">Home</a>
+              <a href="#about">About</a>
+              <a href="#services">Services</a>
+              <!-- <a href="#projects">Projects</a> -->
+              <a href="#contact">Contact</a>
+              <a href="privacy-policy.html">Privacy</a>
+            </div>
+          </div>
+          <div class="col-lg-6 text-lg-right">
+            <p class="copyright">© 2025 Umair Syed. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-<footer class="footer">
-<div class="container">
-<div class="row">
-<div class="col-lg-6 mb-4 mb-lg-0">
-<div class="footer-brand"><span class="brand-icon">{ }</span><span class="brand-text">UMAIR.SYED</span></div>
-<div class="footer-links">
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-<a href="privacy-policy.html">Privacy</a>
-</div>
-</div>
-<div class="col-lg-6 text-lg-right">
-<p class="copyright">© 2025 Umair Syed. All rights reserved.</p>
-</div>
-</div>
-</div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/script.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/script.js?v=2"></script>
+  </body>
 </html>

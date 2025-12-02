@@ -2,24 +2,64 @@
  * Modern Portfolio - JavaScript
  */
 
+// Design is applied inline in HTML head for immediate loading
+
 (function($) {
   'use strict';
+
+  $(document).ready(function() {
+    
+    // Design switcher function
+    function setDesign(design) {
+      document.documentElement.setAttribute('data-design', design);
+      localStorage.setItem('portfolioDesign', design);
+      
+      // Update active state in dropdown
+      $('.design-option').removeClass('active');
+      $(`.design-option[data-design="${design}"]`).addClass('active');
+    }
+    
+    // Set initial active state
+    const currentDesign = document.documentElement.getAttribute('data-design') || 'modern-dark';
+    $(`.design-option[data-design="${currentDesign}"]`).addClass('active');
+    
+    // Design switcher click handler - using event delegation
+    $(document).on('click', '.design-option', function(e) {
+      e.preventDefault();
+      const design = $(this).attr('data-design');
+      
+      if (design) {
+        setDesign(design);
+        
+        // Add smooth transition effect
+        $('body').addClass('design-transitioning');
+        setTimeout(() => {
+          $('body').removeClass('design-transitioning');
+        }, 300);
+        
+        // Close the dropdown - trigger click on parent to close
+        $(this).closest('.dropdown').find('.dropdown-toggle').dropdown('toggle');
+      }
+    });
 
   // ========================================
   // Navigation
   // ========================================
   
-  // Smooth scrolling for navigation links
-  $('.nav-link, a[href^="#"]').on('click', function(e) {
-    var target = $(this.getAttribute('href'));
-    if(target.length) {
-      e.preventDefault();
-      $('html, body').stop().animate({
-        scrollTop: target.offset().top - 70
-      }, 1000);
-      
-      // Close mobile menu after click
-      $('.navbar-collapse').collapse('hide');
+  // Smooth scrolling for navigation links (exclude design options)
+  $('.nav-link').on('click', function(e) {
+    var href = $(this).attr('href');
+    if (href && href.startsWith('#') && href.length > 1) {
+      var target = $(href);
+      if(target.length) {
+        e.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top - 70
+        }, 800, 'swing');
+        
+        // Close mobile menu after click
+        $('.navbar-collapse').collapse('hide');
+      }
     }
   });
 
@@ -241,20 +281,15 @@
   checkScroll(); // Check on load
 
   // ========================================
-  // Initialize on Document Ready
-  // ========================================
+  // Add animation classes to elements
+  $('.service-card, .project-card, .pricing-card, .work-item').addClass('animate-on-scroll');
   
-  $(document).ready(function() {
-    // Add animation classes to elements
-    $('.service-card, .project-card, .pricing-card, .work-item').addClass('animate-on-scroll');
-    
-    // Trigger initial animations
-    setTimeout(checkScroll, 100);
-    
-    // Preload images
-    $('img').on('load', function() {
-      $(this).addClass('loaded');
-    });
+  // Trigger initial animations
+  setTimeout(checkScroll, 100);
+  
+  // Preload images
+  $('img').on('load', function() {
+    $(this).addClass('loaded');
   });
 
   // ========================================
@@ -266,7 +301,7 @@
   });
 
   // ========================================
-  // Custom Cursor
+  // Custom Cursor with Global Mouse Tracking
   // ========================================
   
   const cursor = document.getElementById('cursor');
@@ -275,16 +310,25 @@
   let cursorX = 0;
   let cursorY = 0;
   
+  // Global mouse position - shared with particle system
+  window.globalMouse = { x: 0, y: 0, active: false };
+  
   // Show cursor on mouse move
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
     cursor.style.opacity = '1';
+    
+    // Update global mouse position for particle system
+    window.globalMouse.x = e.clientX;
+    window.globalMouse.y = e.clientY;
+    window.globalMouse.active = true;
   });
   
   // Hide cursor when leaving window
   document.addEventListener('mouseleave', () => {
     cursor.style.opacity = '0';
+    window.globalMouse.active = false;
   });
   
   // Smooth cursor follow
@@ -307,5 +351,158 @@
       cursor.classList.remove('hover');
     });
   });
+
+  // ========================================
+  // Hero Particles Background Animation
+  // ========================================
+  
+  const canvas = document.getElementById('hero-particles');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mouse = { x: null, y: null, radius: 200 };
+    
+    // Set canvas size
+    function setCanvasSize() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    setCanvasSize();
+    window.addEventListener('resize', setCanvasSize);
+    
+    // Get primary color from CSS variable
+    function getPrimaryColor() {
+      const root = document.documentElement;
+      const color = getComputedStyle(root).getPropertyValue('--primary-color').trim();
+      return color || '#9333EA';
+    }
+    
+    // Particle class
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.size = Math.random() * 2 + 1;
+        this.baseSize = this.size;
+      }
+      
+      update() {
+        // Continuous drift
+        this.x += this.vx;
+        this.y += this.vy;
+        
+        // Add slight random movement for organic feel
+        this.vx += (Math.random() - 0.5) * 0.01;
+        this.vy += (Math.random() - 0.5) * 0.01;
+        
+        // Bounce off edges
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        
+        // Global cursor interaction - works anywhere on page
+        if (window.globalMouse && window.globalMouse.active) {
+          const rect = canvas.getBoundingClientRect();
+          const canvasMouseX = window.globalMouse.x - rect.left;
+          const canvasMouseY = window.globalMouse.y - rect.top;
+          
+          const dx = canvasMouseX - this.x;
+          const dy = canvasMouseY - this.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < mouse.radius) {
+            const force = (mouse.radius - distance) / mouse.radius;
+            const angle = Math.atan2(dy, dx);
+            this.vx -= Math.cos(angle) * force * 0.3;
+            this.vy -= Math.sin(angle) * force * 0.3;
+            this.size = this.baseSize + force * 4;
+          } else {
+            this.size += (this.baseSize - this.size) * 0.1;
+          }
+        } else {
+          this.size += (this.baseSize - this.size) * 0.1;
+        }
+        
+        // Limit velocity
+        const maxSpeed = 2;
+        const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+        if (speed > maxSpeed) {
+          this.vx = (this.vx / speed) * maxSpeed;
+          this.vy = (this.vy / speed) * maxSpeed;
+        } else if (speed < 0.1) {
+          // Keep minimum speed to prevent particles from stopping
+          this.vx += (Math.random() - 0.5) * 0.1;
+          this.vy += (Math.random() - 0.5) * 0.1;
+        }
+        
+        // Add damping to slow down over time
+        this.vx *= 0.995;
+        this.vy *= 0.995;
+      }
+      
+      draw() {
+        const primaryColor = getPrimaryColor();
+        ctx.fillStyle = primaryColor;
+        ctx.globalAlpha = 0.6;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    }
+    
+    // Create particles
+    function initParticles() {
+      particles = [];
+      const particleCount = Math.floor((canvas.width * canvas.height) / 12000);
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+    }
+    initParticles();
+    window.addEventListener('resize', initParticles);
+    
+    // Connect particles with lines
+    function connectParticles() {
+      const maxDistance = 120;
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < maxDistance) {
+            const opacity = 1 - (distance / maxDistance);
+            const primaryColor = getPrimaryColor();
+            ctx.strokeStyle = primaryColor;
+            ctx.globalAlpha = opacity * 0.3;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+          }
+        }
+      }
+    }
+    
+    // Animation loop
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      
+      connectParticles();
+      requestAnimationFrame(animate);
+    }
+    animate();
+  }
+
+  }); // End document.ready
 
 })(jQuery);
